@@ -38,6 +38,16 @@ class App extends Component {
     counters[index].value++;
     this.setState({ counters });
   };
+  handleDecerement = counter => {
+    const counters = [...this.state.counters];
+    const index = counters.indexOf(counter);
+    counters[index] = { ...counter };
+    if (counters[index].value > 0) {
+      counters[index].value--;
+      this.setState({ counters });
+    } else {
+    }
+  };
   handleDelete = componentId => {
     console.log("Deleting component id :", componentId);
     var counters = this.state.counters.filter(c => c.id !== componentId);
@@ -60,6 +70,7 @@ class App extends Component {
             onDelete={this.handleDelete}
             onReset={this.handleReset}
             onIncrement={this.handleIncrement}
+            onDecerement={this.handleDecerement}
           ></Counters>
         </main>
       </React.Fragment>

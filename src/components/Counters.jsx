@@ -13,6 +13,7 @@ class Counters extends Component {
             key={counter.id}
             onDelete={this.props.onDelete}
             onIncrement={this.props.onIncrement}
+            onDecerement={this.props.onDecerement}
             counter={counter}
           ></Counter>
         ))}
