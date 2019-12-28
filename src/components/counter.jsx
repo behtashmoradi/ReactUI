@@ -6,7 +6,7 @@ class Counter extends Component {
     fontSize: 35,
     fontWeight: "bold"
   };
-
+  handleReset;
   render() {
     console.log(this.props);
     return (
