@@ -46,7 +46,7 @@ class App extends Component {
             this.state.counters.filter(c => c.value !== 0).length
           }
         ></NavBar>
-        <main role="main" class="container">
+        <main role="main" className="container">
           <Counters
             counters={this.state.counters}
             onDelete={this.handleDelete}
