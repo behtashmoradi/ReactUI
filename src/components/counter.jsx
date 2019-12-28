@@ -13,13 +13,16 @@ class Counter extends Component {
       console.log("you may consider calling ajax method");
     }
   }
+  componentWillUnmount() {
+    console.log("component unmount");
+  }
   handleReset;
   render() {
-    const { id, counter, onIncrement, onDelete } = this.props;
+    const { counter, onIncrement, onDelete } = this.props;
     console.log("Counter.render");
     return (
       <div>
-        <h4>{id}</h4>
+        <h4>{this.props.counter.id}</h4>
         <span className={this.getBadgeClasses()}>{this.formatCounter()}</span>
         <button
           onClick={() => onIncrement(counter)}
@@ -29,7 +32,7 @@ class Counter extends Component {
         </button>
         <button
           className="btn btn-danger btn-sm m-2"
-          onClick={() => onDelete(id)}
+          onClick={() => onDelete(this.props.counter.id)}
         >
           Delete
         </button>
