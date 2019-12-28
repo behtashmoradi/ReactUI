@@ -6,10 +6,17 @@ class Counter extends Component {
     fontSize: 35,
     fontWeight: "bold"
   };
+  componentDidUpdate(prevProps, prevState) {
+    console.log("previous props", prevProps);
+    console.log("this props", this.props);
+    if (prevProps.counter.value !== this.props.counter.value) {
+      console.log("you may consider calling ajax method");
+    }
+  }
   handleReset;
   render() {
     const { id, counter, onIncrement, onDelete } = this.props;
-    console.log(this.props);
+    console.log("Counter.render");
     return (
       <div>
         <h4>{id}</h4>

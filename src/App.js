@@ -11,7 +11,14 @@ class App extends Component {
       { id: 4, value: 0 }
     ]
   };
-
+  constructor() {
+    super();
+    console.log("constructor is called");
+  }
+  componentDidMount() {
+    //component is mounted in the mount and ready so for example we now can call ajax methods to populate
+    console.log("component did mount is called");
+  }
   handleReset = () => {
     const counters = [...this.state.counters];
     for (let index = 0; index < 4; index++) {
@@ -39,6 +46,7 @@ class App extends Component {
   };
 
   render() {
+    console.log("App.render is called");
     return (
       <React.Fragment>
         <NavBar
