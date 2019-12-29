@@ -31,6 +31,13 @@ class App extends Component {
       counters
     });
   };
+  handleDelete = componentId => {
+    console.log("Deleting component id :", componentId);
+    var counters = this.state.counters.filter(c => c.id !== componentId);
+    this.setState({ counters });
+    console.log("Deleted component id :", componentId);
+  };
+
   handleIncrement = counter => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
@@ -48,17 +55,15 @@ class App extends Component {
     } else {
     }
   };
-  handleDelete = componentId => {
-    console.log("Deleting component id :", componentId);
-    var counters = this.state.counters.filter(c => c.id !== componentId);
-    this.setState({ counters });
-    console.log("Deleted component id :", componentId);
-  };
 
   render() {
     console.log("App.render is called");
+
     return (
       <React.Fragment>
+        <div>
+          <h1>Branch:Dev</h1>
+        </div>
         <NavBar
           totalCountersCount={
             this.state.counters.filter(c => c.value !== 0).length
