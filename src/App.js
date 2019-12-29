@@ -57,8 +57,12 @@ class App extends Component {
 
   render() {
     console.log("App.render is called");
+
     return (
       <React.Fragment>
+        <div>
+          <h1>Branch:Dev</h1>
+        </div>
         <NavBar
           totalCountersCount={
             this.state.counters.filter(c => c.value !== 0).length
