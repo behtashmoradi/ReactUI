@@ -31,6 +31,13 @@ class App extends Component {
       counters
     });
   };
+  handleDelete = componentId => {
+    console.log("Deleting component id :", componentId);
+    var counters = this.state.counters.filter(c => c.id !== componentId);
+    this.setState({ counters });
+    console.log("Deleted component id :", componentId);
+  };
+
   handleIncrement = counter => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
@@ -47,12 +54,6 @@ class App extends Component {
       this.setState({ counters });
     } else {
     }
-  };
-  handleDelete = componentId => {
-    console.log("Deleting component id :", componentId);
-    var counters = this.state.counters.filter(c => c.id !== componentId);
-    this.setState({ counters });
-    console.log("Deleted component id :", componentId);
   };
 
   render() {

@@ -18,6 +18,7 @@ class Counter extends Component {
   }
   handleReset;
   render() {
+    // use object destructure for simplicity
     const { counter, onIncrement, onDecerement, onDelete } = this.props;
     console.log("Counter.render");
     return (
