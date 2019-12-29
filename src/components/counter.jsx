@@ -18,8 +18,6 @@ class Counter extends Component {
   }
   handleReset;
   render() {
-    //I shouln't be able to update the master branch directly---2
-    // use object destructure for simplicity
     const { counter, onIncrement, onDecerement, onDelete } = this.props;
     console.log("Counter.render");
     return (
